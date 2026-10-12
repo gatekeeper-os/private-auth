@@ -1,0 +1,17 @@
+Gatekeeper Private Auth
+Copyright (c) 2026 GatekeeperOS contributors
+
+Original implementation is MIT licensed.
+
+This project uses Semaphore (@semaphore-protocol/*) for zero-knowledge group
+membership proofs. It also uses ethers, Zod, snarkjs (transitively), Hardhat,
+the Solidity compiler, TypeScript, tsx, and Playwright. These components retain
+their own licenses and notices in their packages. No upstream runtime or
+cryptographic implementation is copied or claimed as original work here.
+
+Semaphore circuit artifacts are downloaded separately from
+https://snark-artifacts.pse.dev/semaphore/4.13.0/ and are not redistributed in
+this repository. Digests pin the downloaded files, not independent audit status.
+
+GatekeeperOS and this project are independent of the OpenClaw Foundation,
+Semaphore, and their respective maintainers. No endorsement is implied.
