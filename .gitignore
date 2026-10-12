@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.cache/
+artifacts/
+cache/
+coverage/
+.env*
+*.key
+*.log
+demo-state/
+test-results/
+playwright-report/
