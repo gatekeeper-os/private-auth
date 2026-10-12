@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gatekeeper · Private Auth</title><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">G<span>GATEKEEPER</span></a><span class="badge">LOCAL EXPERIMENT</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">PRIVATE AGENT AUTHORIZATION</p>
+      <h1>Prove permission.<br><span>Keep identity private.</span></h1>
+      <p class="lead">Give an agent access to a protected catalog. Verify its permission with a zero-knowledge proof, without telling the service which approved agent is calling.</p>
+    </section>
+    <div class="stats"><div><span class="label">AUTHORIZATION</span><strong id="members">—</strong><small>approved demo agents</small></div><div><span class="label">REGISTRY</span><strong id="epoch">—</strong><small>current permission epoch</small></div><div><span class="label">EXECUTION</span><strong id="executions">—</strong><small>verified catalog reads</small></div></div>
+    <div class="grid">
+      <section class="panel"><div class="section-title"><span class="step">01</span><h2>Grant permission</h2></div><p class="muted">The administrator knows who receives access. The external verifier sees a proof of group membership.</p><div id="agents"></div></section>
+      <section class="panel"><div class="section-title"><span class="step">02</span><h2>Make a private request</h2></div><label for="agent">Demo agent</label><select id="agent"><option value="alice">Alice</option><option value="bob">Bob</option><option value="carol">Carol</option><option value="outsider">Outsider</option></select>
+        <div class="request"><span>PERMISSION</span><code>catalog:read</code><span>RESOURCE</span><code>sensor-a</code></div>
+        <button class="primary" data-action="request">Prove &amp; access catalog <span>↗</span></button>
+        <div class="secondary"><button data-action="stage">Prepare proof</button><button data-action="execute" id="execute">Submit prepared</button><button data-action="replay" id="replay">Replay</button></div>
+        <p class="hint" id="pending">No prepared proof. Prepare one, revoke its agent, then submit it to test revocation.</p>
+        <div id="feedback" role="status" aria-live="polite">Ready for your first request.</div>
+      </section>
+    </div>
+    <section class="panel activity"><div class="section-title"><span class="step">03</span><h2>Inspect the result</h2><span class="muted right">Local demonstration activity</span></div><div id="events"><p class="empty">Authorization attempts and registry changes will appear here.</p></div></section>
+    <section class="boundary"><div><h3>What the service sees</h3><p>The permission group, requested operation, one-time request key, and proof. It receives no individual agent identity commitment.</p></div><div><h3>What this demo establishes</h3><p>Real Semaphore proofs, a local Ethereum registry, and a protected HTTP API. The console controls disposable agent fixtures. Small groups and network metadata can still identify callers.</p></div></section>
+    <footer><span>Experimental · unaudited · no real assets</span><span>Semaphore v4 / local chain 31337</span></footer>
+  </main>
+</body></html>
