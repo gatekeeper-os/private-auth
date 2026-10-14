@@ -1,14 +1,14 @@
-# Gatekeeper Private Auth
+<p align="center"><img src="docs/assets/banner.svg" alt="Private Auth — Request-bound agent authorization using local Semaphore proofs and an Ethereum permission registry." width="100%"></p>
 
-**Prove an agent has permission without revealing which approved agent it is.**
+# Private Auth
 
-Private Auth is an experimental GatekeeperOS project for private authorization across service boundaries. An agent generates a real Semaphore zero-knowledge proof locally. A gateway verifies the proof against an Ethereum permission registry before allowing one narrowly scoped operation.
+**Request-bound agent authorization using local Semaphore proofs and an Ethereum permission registry.**
 
-The first working example is a protected technical catalog: approved agents can read it; outsiders, revoked agents, altered requests, and replays are rejected.
+Unaudited prototype · MIT · [Project overview](docs/OVERVIEW.md) · [Landing-page source](docs/site/index.html)
 
-**Status: local prototype, unaudited.** There is no public-chain deployment, production identity enrollment, or OpenClaw integration. The dashboard is a local demonstration harness with disposable identities, not a deployed admin service. See [verification evidence](docs/verification.md) and [security boundaries](docs/security.md).
+**Local prototype, unaudited.** No production identity enrollment, public-chain deployment, or OpenClaw integration is claimed.
 
-## Try it
+## Quick start
 
 Use Node **22.23.3** and npm 10 or later. No wallet, API key, faucet, Docker, or external RPC is required.
 
