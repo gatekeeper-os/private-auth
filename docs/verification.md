@@ -1,6 +1,6 @@
 # Verification record
 
-Date: 2026-10-12 (America/Los_Angeles)
+Date: 2026-10-13 (America/Los_Angeles)
 
 ## Local evidence
 
@@ -15,6 +15,13 @@ Environment: Linux, Node 22.23.3, npm 10.9.9, pinned package lock, Solidity 0.8.
 | `CHROMIUM_PATH=/run/current-system/sw/bin/chromium npm run test:browser` | PASS, 2 tests | Real browser grant/revoke/prove/replay flow, re-grant, desktop/mobile layout, no page exceptions, and console Host/Origin rejection |
 | `npm audit --audit-level=moderate` | PASS, 0 reported vulnerabilities | Advisory database result for the pinned dependency tree at this date; not a security audit |
 | Proving artifact SHA-256 validation | PASS | Downloaded circuit/key bytes match the committed pins |
+
+## Artifact provenance and license review
+
+- `package-lock.json` pins the installed dependency graph. `@semaphore-protocol/proof` 4.14.3 itself selects Semaphore artifacts version 4.13.0; this repository downloads that version from the upstream `snark-artifacts.pse.dev` service.
+- A fresh download on 2026-10-13 matched the committed SHA-256 pins: `4edc07444a1d48d09014c963e315d3351b6e12838d83fcb1962071614b1c94b9` for the depth-8 WASM and `d02521afe7133a97421244374d4bc005c1ebd7d7cf7c51e88b7e99fdaf183146` for the proving key. This establishes byte identity with the pinned upstream downloads, not the trustworthiness of the ceremony or circuit.
+- The direct runtime dependencies report MIT licenses. Development dependencies report MIT or Apache-2.0. The transitive proof toolchain includes GPL-3.0 packages such as `snarkjs`, `ffjavascript`, and `r1csfile`; neither `node_modules` nor downloaded proving artifacts are redistributed by this repository. Any future binary, container, or npm distribution needs a separate license-compliance review.
+- `npm pack --dry-run` confirmed that neither `.cache/semaphore` nor `node_modules` enters the package payload. This project remains marked `private` and no npm publication is claimed.
 
 ## Authorization test coverage
 
