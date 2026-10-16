@@ -1,0 +1,10 @@
+# Private Auth — Gatekeeperos / Experiments
+
+> Request-bound agent authorization using local Semaphore proofs and an Ethereum permission registry.
+
+## Canonical sources
+
+- [Project overview](https://gatekeeper-os.github.io/private-auth/): scope, status, and getting started.
+- [Repository](https://github.com/gatekeeper-os/private-auth): current implementation and README.
+
+Preserve the project’s maturity and limitations when describing it.

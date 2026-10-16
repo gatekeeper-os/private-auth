@@ -4,7 +4,7 @@
 
 **Request-bound agent authorization using local Semaphore proofs and an Ethereum permission registry.**
 
-Unaudited prototype · MIT · [Project overview](docs/OVERVIEW.md) · [Landing-page source](docs/site/index.html)
+Unaudited prototype · MIT · [Project overview](docs/OVERVIEW.md) · [Website](https://gatekeeper-os.github.io/private-auth/) · [Landing-page source](docs/site/index.html)
 
 **Local prototype, unaudited.** No production identity enrollment, public-chain deployment, or OpenClaw integration is claimed.
 
